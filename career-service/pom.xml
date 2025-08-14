@@ -25,6 +25,7 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
+
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
         </dependency>
@@ -33,6 +34,7 @@
             <artifactId>postgresql</artifactId>
         </dependency>
         <dependency>
+
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>1.5.5.Final</version>

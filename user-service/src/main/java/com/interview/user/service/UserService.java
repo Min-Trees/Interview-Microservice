@@ -2,11 +2,14 @@ package com.interview.user.service;
 
 import com.interview.user.dto.request.EloApplyRequest;
 import com.interview.user.dto.request.LoginRequest;
+
 import com.interview.user.dto.request.UserRequest;
 import com.interview.user.dto.response.UserResponse;
 import com.interview.user.entity.*;
 import com.interview.user.mapper.UserMapper;
+
 import com.interview.user.repository.EloHistoryRepository;
+
 import com.interview.user.repository.RoleRepository;
 import com.interview.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,7 +23,9 @@ public class UserService {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
+
     private final EloHistoryRepository historyRepository;
+
     private final UserMapper userMapper;
 
     public UserResponse register(UserRequest request) {
@@ -34,6 +39,7 @@ public class UserService {
         user.setCreatedAt(LocalDateTime.now());
         return userMapper.toResponse(userRepository.save(user));
     }
+
 
     public UserResponse login(LoginRequest request) {
         User user = userRepository.findByEmail(request.getEmail())
@@ -54,11 +60,13 @@ public class UserService {
         return userMapper.toResponse(userRepository.save(user));
     }
 
+
     public UserResponse getById(Long id) {
         return userRepository.findById(id)
                 .map(userMapper::toResponse)
                 .orElse(null);
     }
+
 
     public UserResponse updateRole(Long id, Long roleId) {
         User user = userRepository.findById(id)
@@ -103,4 +111,5 @@ public class UserService {
         if (score >= 100) return EloRank.LEARNER;
         return EloRank.NEWBIE;
     }
+
 }
