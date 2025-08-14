@@ -1,0 +1,21 @@
+server:
+  port: 0
+
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BROKER}
+  redis:
+    host: redis
+    port: 6379
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI}
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    zipkin:
+      endpoint: http://zipkin:9411/api/v2/spans

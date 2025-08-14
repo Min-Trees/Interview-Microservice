@@ -7,6 +7,10 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+
+import java.util.List;
+
+
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
@@ -23,4 +27,11 @@ public class CareerController {
     public CareerPreferenceResponse get(@PathVariable Long id) {
         return careerService.getById(id);
     }
+
+
+    @GetMapping("/career/recommendations/{userId}")
+    public List<CareerPreferenceResponse> recommend(@PathVariable Long userId) {
+        return careerService.getRecommendations(userId);
+    }
+
 }

@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
+import java.util.List;
+
+
 @Service
 @RequiredArgsConstructor
 public class CareerService {
@@ -28,4 +31,12 @@ public class CareerService {
                 .map(mapper::toResponse)
                 .orElse(null);
     }
+
+
+    public List<CareerPreferenceResponse> getRecommendations(Long userId) {
+        return repository.findByUserId(userId).stream()
+                .map(mapper::toResponse)
+                .toList();
+    }
+
 }
