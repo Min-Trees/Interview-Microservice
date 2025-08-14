@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: news-service
+  datasource:
+    url: jdbc:postgresql://mainline.proxy.rlwy.net:55240/railway
+    username: postgres
+    password: imDbpNYRkmRSNrIUlpLFfSKGTKAmxovg
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
