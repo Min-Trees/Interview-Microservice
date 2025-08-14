@@ -1,0 +1,18 @@
+# Maven
+**/target/
+**/.mvn/
+**/mvnw*
+
+# IDEs
+*.iml
+.idea/
+.project
+.classpath
+.settings/
+
+# OS files
+.DS_Store
+
+# Env files
+.env
+
