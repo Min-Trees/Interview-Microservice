@@ -1,0 +1,9 @@
+com\interview\news\NewsServiceApplication.class
+com\interview\news\dto\response\NewsResponse.class
+com\interview\news\config\NewsConfig.class
+com\interview\news\controller\NewsController.class
+com\interview\news\entity\News.class
+com\interview\news\repository\NewsRepository.class
+com\interview\news\mapper\NewsMapper.class
+com\interview\news\dto\request\NewsRequest.class
+com\interview\news\service\NewsService.class

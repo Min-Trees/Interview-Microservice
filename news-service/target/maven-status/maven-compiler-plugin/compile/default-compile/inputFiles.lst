@@ -1,0 +1,9 @@
+D:\Job\Interview-Microservice\news-service\src\main\java\com\interview\news\config\NewsConfig.java
+D:\Job\Interview-Microservice\news-service\src\main\java\com\interview\news\controller\NewsController.java
+D:\Job\Interview-Microservice\news-service\src\main\java\com\interview\news\dto\request\NewsRequest.java
+D:\Job\Interview-Microservice\news-service\src\main\java\com\interview\news\dto\response\NewsResponse.java
+D:\Job\Interview-Microservice\news-service\src\main\java\com\interview\news\entity\News.java
+D:\Job\Interview-Microservice\news-service\src\main\java\com\interview\news\mapper\NewsMapper.java
+D:\Job\Interview-Microservice\news-service\src\main\java\com\interview\news\NewsServiceApplication.java
+D:\Job\Interview-Microservice\news-service\src\main\java\com\interview\news\repository\NewsRepository.java
+D:\Job\Interview-Microservice\news-service\src\main\java\com\interview\news\service\NewsService.java
