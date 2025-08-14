@@ -7,6 +7,25 @@ docker compose up -d
 docker compose ps
 ```
 
+The stack reads database and infrastructure settings from a `.env` file. A sample is provided:
+
+```
+POSTGRES_HOST=mainline.proxy.rlwy.net
+POSTGRES_PORT=55240
+POSTGRES_DB=railway
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=imDbpNYRkmRSNrIUlpLFfSKGTKAmxovg
+POSTGRES_SSLMODE=require
+KAFKA_BROKER=kafka:9092
+EUREKA_URI=http://eureka:8761/eureka
+CONFIG_URI=http://config:8888
+USER_SCHEMA=user_svc
+QUESTION_SCHEMA=question_svc
+EXAM_SCHEMA=exam_svc
+CAREER_SCHEMA=career_svc
+NEWS_SCHEMA=news_svc
+```
+
 ## Quick checks
 ```
 curl -s http://localhost:8080/actuator/health

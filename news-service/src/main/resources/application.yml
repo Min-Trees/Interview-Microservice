@@ -2,14 +2,15 @@ spring:
   application:
     name: news-service
   datasource:
-    url: jdbc:postgresql://mainline.proxy.rlwy.net:55240/railway
-    username: postgres
-    password: imDbpNYRkmRSNrIUlpLFfSKGTKAmxovg
+    url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}?sslmode=${POSTGRES_SSLMODE}
+    username: ${POSTGRES_USER}
+    password: ${POSTGRES_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: validate
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+        default_schema: ${NEWS_SCHEMA}
   flyway:
     enabled: true

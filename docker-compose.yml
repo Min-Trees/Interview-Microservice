@@ -83,6 +83,7 @@ services:
     build:
       context: ./config-service
       dockerfile: docker/Dockerfile
+    env_file: .env
     environment:
       SPRING_PROFILES_ACTIVE: native
       SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS: file:/workspace/config
@@ -100,6 +101,7 @@ services:
     build:
       context: ./discovery-service
       dockerfile: docker/Dockerfile
+    env_file: .env
     environment:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_CONFIG_IMPORT: optional:configserver:${CONFIG_URI}
@@ -114,6 +116,7 @@ services:
     build:
       context: ./gateway
       dockerfile: docker/Dockerfile
+    env_file: .env
     environment:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_CONFIG_IMPORT: optional:configserver:${CONFIG_URI}
@@ -130,6 +133,7 @@ services:
     build:
       context: ./user-service
       dockerfile: docker/Dockerfile
+    env_file: .env
     environment:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_CONFIG_IMPORT: optional:configserver:${CONFIG_URI}
@@ -150,6 +154,7 @@ services:
     build:
       context: ./question-service
       dockerfile: docker/Dockerfile
+    env_file: .env
     environment:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_CONFIG_IMPORT: optional:configserver:${CONFIG_URI}
@@ -170,6 +175,7 @@ services:
     build:
       context: ./exam-service
       dockerfile: docker/Dockerfile
+    env_file: .env
     environment:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_CONFIG_IMPORT: optional:configserver:${CONFIG_URI}
@@ -190,6 +196,7 @@ services:
     build:
       context: ./career-service
       dockerfile: docker/Dockerfile
+    env_file: .env
     environment:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_CONFIG_IMPORT: optional:configserver:${CONFIG_URI}
@@ -210,6 +217,7 @@ services:
     build:
       context: ./news-service
       dockerfile: docker/Dockerfile
+    env_file: .env
     environment:
       SPRING_PROFILES_ACTIVE: docker
       SPRING_CONFIG_IMPORT: optional:configserver:${CONFIG_URI}
@@ -228,6 +236,7 @@ services:
 
   nlp-service:
     build: ./nlp-service
+    env_file: .env
     ports:
       - "7000:7000"
     command: uvicorn app:app --host 0.0.0.0 --port 7000
